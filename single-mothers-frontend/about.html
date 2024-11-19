@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SMEEF</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* CSS Variables */
+    :root {
+      --primary-color: #ff851b;
+      --text-color: #333;
+    }
+
+    /* Basic Page Structure */
+    body {
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+    background-color: #ff851b; /* Orange background */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #e67e22; /* Orange border for separation */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Centers the menu */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Spacing between menu items */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgb(255, 255, 255); /* White background on hover */
+    color: #ff851b; /* Orange text on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Login Button */
+.login a {
+    background-color: rgb(255, 255, 255); /* White background */
+    color: #ff851b; /* Orange text */
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login a:hover {
+    background-color: #e67e22; /* Darker orange on hover */
+    color: black; /* White text */
+}
+
+/* Responsive Design for Header */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap; /* Allows items to stack on smaller screens */
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+    /* Main Sections */
+    section {
+      padding: 40px 20px;
+    }
+
+    /* About Us Section */
+    .about-us-main {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .about-us-main h2 {
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+
+    .about-us-main p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #555;
+    }
+    /* CTA Button Styles */
+.cta-button {
+  display: inline-block; /* Makes the button inline-block for better styling */
+  padding: 12px 25px; /* Padding for comfortable spacing */
+  font-size: 1.1rem; /* Slightly larger font size */
+  font-weight: bold; /* Bold text for emphasis */
+  color: #fff; /* White text color */
+  background-color: #2a3f56; /* Primary blue background color */
+  border: 1px solid #3e5267; /* Matching border */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center-align text */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth transition effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.cta-button:hover {
+  background-color:var(--primary-color); 
+  color: #fff; /* Keep text white on hover */
+  border-color:var(--primary-color); /* Change border to match hover background */
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+/* Values Section Styles */
+#values {
+  background-color: #f9f9f9; /* Soft background color for contrast, same as Mission & Vision */
+  padding: 50px 20px; /* Generous padding for breathing space */
+  border-radius: 10px; /* Rounded corners for a smooth appearance */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Centered text */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+#values h2 {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold font weight for stronger presence */
+  color: #000; /* Black color for the heading */
+  margin-bottom: 25px; /* Space between heading and content */
+  text-transform: uppercase; /* Make the heading uppercase for a bold look */
+  letter-spacing: 1px; /* Slight letter spacing for modern touch */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow to make text pop */
+}
+
+#values p {
+  font-size: 1.2rem; /* Slightly larger paragraph text */
+  line-height: 1.8; /* Increased line height for readability */
+  max-width: 800px; /* Max width to prevent text from stretching too far */
+  margin: 0 auto; /* Center align the text */
+  color: #000; /* Black color for the small text */
+}
+
+#values .value-item {
+  display: inline-block; /* Inline block elements for horizontal layout */
+  margin: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners for items */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+#values .value-item:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+#values .value-item h3 {
+  font-size: 1.5rem; /* Smaller but bold header for values */
+  color: #000; /* Black color for the heading */
+  margin-bottom: 10px;
+}
+
+#values .value-item p {
+  font-size: 1rem; /* Regular size for description */
+  color: #000; /* Black color for the small text */
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  #values {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+  
+  #values .value-item {
+    display: block; /* Stack items vertically on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+    /* Impact Stats Section */
+    .impact-stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .stat {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      width: 150px;
+    }
+
+    .stat h3 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+
+    .stat p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+   /* Mission and Vision Section Styles */
+.mission-vision-values {
+  background-color: #f9f9f9; /* Soft background color for contrast */
+  padding: 50px 20px; /* Generous padding for breathing space */
+  border-radius: 10px; /* Rounded corners for a smooth appearance */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Centered text for alignment */
+  margin: 40px 0; /* Vertical margin for spacing */
+}
+
+.mission-vision-values h2 {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold font weight for stronger presence */
+  color: var(--primary-color); /* Use primary color for heading */
+  margin-bottom: 25px; /* Space between heading and content */
+  text-transform: uppercase; /* Make the heading uppercase for a bold look */
+  letter-spacing: 1px; /* Slight letter spacing for modern touch */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Light shadow to make text pop */
+}
+
+.mission-vision-values .section-content {
+  display: flex; /* Flexbox layout for side-by-side alignment */
+  justify-content: center; /* Center content horizontally */
+  gap: 50px; /* Space between Mission and Vision sections */
+  flex-wrap: wrap; /* Wrap content on smaller screens */
+}
+
+.mission-vision-values .section-content div {
+  flex: 1 1 45%; /* Each div takes up 45% of the available width */
+  max-width: 400px; /* Maximum width for each section */
+  padding: 30px;
+  border: 2px solid var(--primary-color); /* Border to highlight sections */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #fff; /* White background for contrast */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.mission-vision-values .section-content div:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.mission-vision-values .section-content div h3 {
+  font-size: 1.8rem; /* Larger subheading font size */
+  color: var(--primary-color); /* Primary color for subheadings */
+  margin-bottom: 15px; /* Margin below subheading */
+  font-weight: 600; /* Slightly lighter than main heading */
+}
+
+.mission-vision-values .section-content div p {
+  font-size: 1.1rem; /* Slightly larger text for readability */
+  color: #555; /* Darker text for readability */
+  line-height: 1.6; /* Increased line height for better readability */
+  margin-bottom: 20px; /* Space at the bottom */
+}
+
+.mission-vision-values .section-content div p:last-child {
+  margin-bottom: 0; /* No margin after the last paragraph */
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .mission-vision-values {
+    padding: 30px 10px; /* Adjust padding on smaller screens */
+  }
+
+  .mission-vision-values h2 {
+    font-size: 2.2rem; /* Slightly smaller heading */
+  }
+
+  .mission-vision-values .section-content {
+    flex-direction: column; /* Stack Mission and Vision vertically */
+    gap: 30px; /* Space between stacked sections */
+  }
+
+  .mission-vision-values .section-content div {
+    max-width: 100%; /* Full width for each section */
+    padding: 20px;
+  }
+}
+
+    /* Footer */
+    footer {
+      background-color: #e67e22;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 50px;
+    }
+    .social-icons {
+  display: flex; /* Align icons in a row */
+  justify-content: center; /* Center icons horizontally */
+  gap: 15px; /* Space between icons */
+  margin: 20px 0; /* Margin for spacing */
+}
+
+.social-icons .icon {
+  display: inline-flex; /* Ensure icons stay inline */
+  justify-content: center; /* Center icon inside its container */
+  align-items: center;
+  width: 40px; /* Adjusted width for better proportion */
+  height: 40px; /* Adjusted height for better proportion */
+  border-radius: 50%; /* Perfect circle */
+  background-color: #555; /* Softer dark background for icons */
+  color: #fff; /* White icon color */
+  font-size: 1.2rem; /* Adjusted icon size for better fit */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  text-decoration: none; /* Remove underline on links */
+}
+
+/* Hover Effect */
+.social-icons .icon:hover {
+  background-color: #007bff; /* Bright hover color */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Specific Colors for Each Platform */
+.social-icons .facebook {
+  background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icons .facebook:hover {
+  background-color: #2d4373; /* Darker shade on hover */
+}
+
+.social-icons .twitter {
+  background-color: #1da1f2; /* Twitter blue */
+}
+
+.social-icons .twitter:hover {
+  background-color: #0d8aec; /* Darker shade on hover */
+}
+
+.social-icons .instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* Instagram gradient */
+}
+
+.social-icons .instagram:hover {
+  background: linear-gradient(45deg, #e6683c, #dc2743, #cc2366, #bc1888, #9b1179); /* Darker gradient on hover */
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header>
+    <nav class="navbar nav-links">
+     
+      <a href="index.html">Home</a>
+      <a href="feature.html">Features</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html">Login</a>
+      <div class="logout-section">
+        <a href="index.html" class="logout-btn">Log Out</a>
+    
+</nav>  
+</header>
+
+  <!-- About Us Section -->
+  <section id="about-us" class="about-us-main">
+    <h2>About Us</h2>
+    <p>At SMEEF, we are dedicated to empowering single mothers in Rwanda by offering comprehensive training in entrepreneurship, life skills, and business development. Our mission is to help them become financially independent and build a better future for their families.</p>
+    <p>Through mentorship, community support, and sustainable business practices, we create lasting, positive change in the lives of single mothers.</p>
+    <a href="/about" class="cta-button">Learn More</a>
+  </section>
+
+  <!-- Impact Stats Section -->
+  <section class="impact-stats">
+    <div class="stat">
+      <h3>300+</h3>
+      <p>Single Mothers Trained</p>
+    </div>
+    <div class="stat">
+      <h3>50+</h3>
+      <p>Businesses Started</p>
+    </div>
+    <div class="stat">
+      <h3>10+</h3>
+      <p>Mentors Supporting</p>
+    </div>
+  </section>
+  <!-- Values Section -->
+  <section id="values" class="values">
+    <h2>Our Values</h2>
+    <div class="value-item">
+      <h3>Integrity</h3>
+      <p>We adhere to the highest ethical standards, ensuring that all our actions and decisions reflect honesty and transparency.</p>
+    </div>
+    <div class="value-item">
+      <h3>Empowerment</h3>
+      <p>We empower single mothers by providing them with the tools, knowledge, and confidence to build a better future for their families.</p>
+    </div>
+    <div class="value-item">
+      <h3>Community</h3>
+      <p>Our success is rooted in the strength of the community we build—where we support, collaborate, and grow together.</p>
+    </div>
+    <div class="value-item">
+      <h3>Sustainability</h3>
+      <p>We promote sustainable practices that allow our beneficiaries to thrive while minimizing their impact on the environment.</p>
+    </div>
+  </section>  
+  <section id="mission-vision" class="mission-vision-values">
+    <h2>Our Mission & Vision</h2>
+    <div class="section-content">
+      <div>
+        <h3>Our Mission</h3>
+        <p>Our mission is to empower single mothers in Rwanda by providing them with comprehensive skills training, job opportunities, and entrepreneurial support to help them build a better future for their children.</p>
+      </div>
+      <div>
+        <h3>Our Vision</h3>
+        <p>We envision a Rwanda where single mothers have the resources and support they need to thrive independently, creating a legacy of empowerment and sustainability for generations to come.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 SMEEF - Single Mothers Economic Empowerment Framework</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/yourpage" target="_blank" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
+     <a href="https://twitter.com/yourpage" target="_blank" class="icon twitter"><i class="fab fa-twitter"></i></a>
+     <a href="https://instagram.com/yourpage" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Smooth Scrolling Script -->
+  <script>
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

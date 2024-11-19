@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEEF - Mentorship Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <a href="home.html">Home</a>>
+                <a href="features.html">Features</a>>
+                <a href="about.html">About Us</a>
+               <a href="training.html">Training</a>
+                <a href="mentorship.html">Mentorship</a>
+                <a href="contact.html">Contact Us</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mentorship Program Section -->
+<section class="mentorship-section">
+    <div class="mentorship-content">
+        <h1 class="mentorship-title">Mentorship Program</h1>
+        
+        <div class="mentorship-text">
+         
+            <p class="mentorship-description">
+                Through mentorship, participants gain valuable insights, industry expertise, and the encouragement to navigate the world of business and employment. Whether they aim to start a small business, advance their careers, or develop new life skills, our mentorship program offers personalized support to help them reach these goals.
+            </p>
+        </div>
+        
+        <!-- Animated Image Section -->
+        <div class="mentorship-images">
+            <div class="mentorship-image">
+                <img src="images/mentor2.jpg" alt="Mentor guiding a participant">
+            </div>
+            <div class="mentorship-image">
+                <img src="images/mentor3.jpg" alt="Group discussion for skill development">
+            </div>
+            <div class="mentorship-image">
+                <img src="images/mentor4.jpg" alt="Supportive community environment">
+            </div>
+        </div>
+        <div class="container">
+            <!-- Program Highlights -->
+            <section class="program-highlights">
+              <h2>Program Highlights</h2>
+              <div class="key-benefits">
+                <h3>Key Benefits</h3>
+                <ul>
+                  <li><i class="fas fa-user-friends"></i> Personalized Guidance</li>
+                  <li><i class="fas fa-briefcase"></i> Skill-Building Workshops</li>
+                  <li><i class="fas fa-users"></i> Networking Opportunities</li>
+                  <li><i class="fas fa-book-open"></i> Access to Resources</li>
+                </ul>
+              </div>
+            </section>
+          <div class="testimonials-and-mentors">
+    <!-- Testimonials Carousel -->
+    <div class="testimonials-carousel">
+        <h3>Testimonials</h3>
+        <div class="carousel-inner">
+            <div class="testimonial-item">
+                <p>"This mentorship program changed my career. The guidance was invaluable!"</p>
+                <p>- Mentee</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"I loved mentoring. Seeing the growth in my mentee was incredibly rewarding!"</p>
+                <p>- Mentor</p>
+            </div>
+        </div>
+        <div class="carousel-prev">&lt;</div>
+        <div class="carousel-next">&gt;</div>
+    </div>
+
+    <!-- Featured Mentors Section -->
+    <section class="featured-mentors">
+        <h2>Featured Mentors</h2>
+        <div class="mentors-grid">
+            <div class="mentor-card">
+                <img src="mentor1.jpg" alt="Mentor 1">
+                <div class="mentor-info">
+                    <h4>Jane Doe</h4>
+                    <p>Expert in Digital Marketing</p>
+                </div>
+            </div>
+            <div class="mentor-card">
+                <img src="mentor2.jpg" alt="Mentor 2">
+                <div class="mentor-info">
+                    <h4>John Smith</h4>
+                    <p>Leadership & Development Coach</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+        </div>
+        <!-- Add more mentor cards as needed -->
+    </div>
+</section>
+
+          <!-- Success Stories -->
+<section class="success-stories">
+    <h2>Success Stories</h2>
+    <div class="success-content">
+        <div class="case-studies">
+            <h3>Case Studies</h3>
+            <p>Read about our program's impact on mentees' lives, from job placements to business launches.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+        <!-- Impact Statistics Block -->
+        <div class="impact-stats">
+            <h3>Our Program Impact</h3>
+            <ul>
+                <li><strong>200+</strong> mentees placed in jobs</li>
+                <li><strong>150</strong> businesses launched by graduates</li>
+                <li><strong>95%</strong> success rate in meeting mentees' career goals</li>
+            </ul>
+        </div>
+    </div>
+</section>
+          
+            <!-- Apply to Be a Mentee -->
+            <section class="apply-form">
+              <h2>Apply to Be a Mentee</h2>
+              <div class="eligibility">
+                <h3>Eligibility Criteria</h3>
+                <p>If you’re passionate about personal growth and ready to be mentored, we invite you to apply!</p>
+              </div>
+              <form action="#" class="apply-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="goals">Why do you want to join?</label>
+                <textarea id="goals" name="goals" rows="4" required></textarea>
+                <button type="submit" class="btn">Apply Now</button>
+              </form>
+            </section>
+          </div>
+
+        <!-- Call-to-Action Section -->
+        <div class="mentor-cta">
+            <h2 class="cta-title">Become a Mentor</h2>
+            <p class="cta-description">
+                Are you passionate about empowering others and eager to contribute to positive change? Join our community of mentors and provide invaluable guidance to single mothers striving for economic independence. As a mentor, you’ll help participants build skills, grow confidence, and create opportunities for their futures.
+            </p>
+            <a href="Registration/mentor-register.html" class="mentor-register-btn">Register as a Mentor</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 SMEEF - Single Mothers Economic Empowerment Framework</p>
+</footer>
+
+<!-- JavaScript for Image Animation -->
+<script>
+    window.onload = function() {
+        const images = document.querySelectorAll(".mentorship-image");
+        images.forEach((img, index) => {
+            setTimeout(() => {
+                img.style.opacity = "1";
+                img.style.transform = "scale(1)";
+            }, 300 * index);
+        });
+    };
+    let currentIndex = 0;
+
+function showTestimonial(index) {
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    const totalTestimonials = testimonials.length;
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    // Ensure the index is within bounds
+    if (index < 0) {
+        currentIndex = totalTestimonials - 1;
+    } else if (index >= totalTestimonials) {
+        currentIndex = 0;
+    } else {
+        currentIndex = index;
+    }
+
+    // Update the transform property for sliding effect
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextTestimonial() {
+    showTestimonial(currentIndex + 1);
+}
+
+function prevTestimonial() {
+    showTestimonial(currentIndex - 1);
+}
+
+// Auto-slide every 5 seconds
+setInterval(nextTestimonial, 5000);
+</script>
+
+<!-- CSS -->
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7; /* Updated background color */
+        color: #000;
+        line-height: 1.6;
+        margin: 0;
+    }
+    
+    /* Header Styling */
+    header {
+        background-color: #ff851b;
+        padding: 15px 0;
+    }
+    
+    header nav ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+    }
+    
+    header nav ul li {
+        margin: 0 20px;
+    }
+    
+    header nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    header nav ul li a:hover {
+        color: #000;
+    }
+    
+    /* Mentorship Section Styling */
+    .mentorship-section {
+        background-image: url('background-image.jpg');
+        padding: 50px 0;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    
+    .mentorship-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+    
+    .mentorship-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .mentorship-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        color: #ff851b;
+    }
+    
+    .mentorship-description {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: #f8f8f8;
+    }
+    
+    /* Image Section */
+    .mentorship-images {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .mentorship-image {
+        flex: 1;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.8s ease;
+    }
+    
+    .mentorship-image img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    /* Call to Action Section */
+    .mentor-cta {
+        padding: 30px 20px;
+        margin-top: 40px;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff851b;
+    }
+    
+    .cta-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #f8f8f8;
+        margin-bottom: 20px;
+    }
+    
+    .mentor-register-btn {
+        font-size: 1.2rem;
+        background-color: #ff851b;
+        padding: 12px 25px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .mentor-register-btn:hover {
+        background-color: #e67517;
+    }
+    
+    /* Footer Styling */
+    footer {
+        background-color: #ff851b;
+        text-align: center;
+        padding: 20px 0;
+        color: white;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    
+   /* Program Highlights with Transition */
+.program-highlights {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(200, 194, 194, 0.1);
+    text-align: center;
+}
+
+.program-highlights .key-benefits ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.program-highlights .key-benefits li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.program-highlights .key-benefits li:hover {
+    transform: scale(1.05);
+    background-color: rgb(183, 177, 177);
+}
+
+.program-highlights .key-benefits i {
+    margin-right: 10px;
+    color: #ff851b;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.program-highlights .key-benefits li:hover i {
+    color: #e67517;
+}
+
+/* Mobile Responsiveness for Program Highlights */
+@media screen and (max-width: 768px) {
+    .program-highlights .key-benefits ul {
+        grid-template-columns: 1fr;
+    }
+}
+/* Testimonials Carousel Styling */
+.testimonials-carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.testimonials-carousel h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-item {
+    min-width: 100%;
+    padding: 20px;
+    color: #444;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: #ff851b;
+}
+
+  /* Featured Mentors Section */
+.featured-mentors {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.featured-mentors h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Mentors Grid */
+.featured-mentors .mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Mentor Card Styling */
+.mentor-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Mentor Card Image */
+.mentor-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #ff851b;
+}
+
+/* Mentor Info Section */
+.mentor-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.mentor-info h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.mentor-info p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    font-size: 0.9rem;
+    color: white;
+    background-color: #ff851b;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #e67517;
+}
+
+/* Spotlight Section (if used elsewhere) */
+.mentor-spotlight .spotlight {
+    background-color: #f9f9f9;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .mentor-info {
+        padding: 15px;
+    }
+    .learn-more-btn {
+        padding: 7px 12px;
+    }
+}
+  
+  /* Success Stories Section */
+.success-stories {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.success-stories h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.success-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    margin-top: 20px;
+}
+
+.success-content > div {
+    flex: 1 1 45%; /* Flexible items, minimum 45% width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.success-content > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.success-content h3 {
+    font-size: 1.5rem;
+    color: #ff851b;
+    margin-bottom: 15px;
+}
+
+.success-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.success-content ul {
+    list-style: none;
+    padding: 0;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.success-content ul li strong {
+    color: #ff851b;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff851b;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e67517;
+}
+
+
+/* Content Wrapper */
+.success-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Case Studies Styling */
+.case-studies, .testimonials, .impact-stats {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.case-studies:hover, .testimonials:hover, .impact-stats:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonials Block Styling */
+.testimonials h3 {
+    font-size: 1.8rem;
+    color: #ff851b;
+    margin-bottom: 15px;
+}
+
+.testimonials p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Impact Statistics Styling */
+.impact-stats h3 {
+    font-size: 1.8rem;
+    color: #ff851b;
+    margin-bottom: 15px;
+}
+
+.impact-stats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.impact-stats li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.read-more-btn {
+    display: inline-block;
+    color: white;
+    background-color: #ff851b;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+}
+
+.read-more-btn:hover {
+    background-color: #e67517;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .success-content {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}
+    /* Apply to Be a Mentee Form Styling */
+.apply-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;  /* Increased border radius for smooth rounded edges */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+    border: 1px solid #eee;
+}
+
+/* Label Styling */
+.apply-form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Input and Textarea Styling */
+.apply-form input,
+.apply-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;  /* Rounded input fields */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s ease;
+    font-size: 1rem;
+}
+
+.apply-form input:focus,
+.apply-form textarea:focus {
+    border: 1px solid #ff851b;
+    outline: none;
+}
+
+/* Submit Button Styling */
+.apply-form .btn {
+    background-color: #ff851b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;  /* Rounded button */
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apply-form .btn:hover {
+    background-color: #ff6200;
+    box-shadow: 0 4px 10px rgba(255, 98, 0, 0.3);  /* Shadow effect on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .apply-form {
+        padding: 20px;
+    }
+    
+    .apply-form label {
+        font-size: 0.9rem;
+    }
+    /* Apply to Be a Mentee Form Heading */
+.apply-form h2 {
+    color: #000;  /* Set heading color to black */
+    font-size: 1.8rem;  /* Adjust font size as desired */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;  /* Space below the heading */
+}
+    .apply-form .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+    </style>
+    

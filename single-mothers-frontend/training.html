@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEEF Training Programs</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* CSS Variables */
+        :root {
+            --primary-color: #ff851b;
+            --secondary-color: #007bff;
+            --text-color: #333;
+            --light-bg: #f4f4f4;
+            --dark-bg: #222;
+            --section-spacing: 60px;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: var(--dark-bg);
+        }
+
+        /* Section Styling */
+        section {
+            padding: var(--section-spacing) 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        section:nth-child(odd) {
+            background-color: white;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        ul li strong {
+            color: var(--secondary-color);
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* Highlight Animation */
+        .highlight {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            animation: fadeHighlight 1s ease;
+        }
+
+        @keyframes fadeHighlight {
+            from {
+                background-color: var(--primary-color);
+            }
+            to {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about-training">Our Training Programs</a></li>
+                <li><a href="#skill-development">Skill Development Modules</a></li>
+                <li><a href="#business-programs">Business Programs</a></li>
+                <li><a href="#personal-development">Personal Development</a></li>
+                <li><a href="#support-resources">Support Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sections -->
+    <section id="about-training">
+        <h1>Our Training Programs</h1>
+        <p>Empowering single mothers with the tools and knowledge needed for success.</p>
+        <a href="#skill-development" class="cta-button">Explore More</a>
+    </section>
+
+    <section id="skill-development">
+        <h2>Skill Development Modules</h2>
+        <p>Hands-on learning experiences tailored to various industries and skillsets.</p>
+        <ul>
+            <li><strong>Entrepreneurship:</strong> Fundamentals of starting and managing a business.</li>
+            <li><strong>Digital Literacy:</strong> Key tools and technologies for modern workplaces.</li>
+        </ul>
+    </section>
+
+    <!-- More sections... -->
+</body>
+</html>

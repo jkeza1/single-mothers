@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to SMEEF</title>
+</head>
+<body>
+    <style>
+        /* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #f7f7f7; /* Pale white background color for the whole page */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Section for the content */
+section {
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff851b; /* Orange color */
+    font-weight: 700;
+}
+
+/* Paragraph for description */
+section p {
+    font-size: 16px;
+    color: #dcdcdc;
+    margin-bottom: 30px;
+}
+
+/* Donation form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #090909;
+}
+
+form input {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #c2bdbd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus {
+    border: 2px solid #ff851b; /* Orange border on focus */
+}
+
+form button {
+    font-size: 18px;
+    padding: 15px;
+    background-color: #ff851b; /* Orange button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+    background-color: #e07b1f; /* Darker orange on hover */
+}
+
+form button:active {
+    background-color: #c46e1a; /* Even darker orange on click */
+}
+/* Styling for the contact note */
+.contact-note {
+    font-size: 18px;
+    color: #0d0d0d;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.contact-note .contact-link {
+    color: #ff851b; /* Orange color for the link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-note .contact-link:hover {
+    color: #e07b1f; /* Slightly darker orange when hovered */
+    text-decoration: underline;
+}
+/* Style for the donation currency dropdown */
+#donation-currency {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+.donation-message {
+    color: #000000; /* Black color for the text */
+}
+
+/* Style for the donation amount input */
+#donation-amount {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+button[type="submit"] {
+    background-color: #ff851b; /* Orange button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e07b1f; /* Darker orange on hover */
+}
+
+/* Responsive adjustments for the contact note */
+@media (max-width: 600px) {
+    .contact-note {
+        font-size: 16px;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    form label {
+        font-size: 16px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    form button {
+        font-size: 16px;
+    }
+}
+
+footer {
+    margin-top: 30px;
+    color: #ff851b;
+    font-size: 14px;
+}
+
+/* Optional additional styles for links (if needed) */
+footer a {
+    color: #ff851b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+    <section>
+        <h1>Donate Today, Transform a Life</h1>
+        <p class="donation-message">Your donation empowers single mothers in Rwanda through skills training and entrepreneurship</p>
+
+        
+        <!-- Donation Form (Optional) -->
+        <form id="donation-form">
+            <label for="donation-currency">Choose Currency:</label>
+            <select id="donation-currency" name="donation-currency" required>
+                <option value="rwf">RWF (Rwandan Franc)</option>
+                <option value="usd">USD (United States Dollar)</option>
+            </select>
+            
+            <label for="donation-amount">Donation Amount:</label>
+            <input type="number" id="donation-amount" name="donation-amount" required>
+            
+            
+            <label for="donor-name">Your Name:</label>
+            <input type="text" id="donor-name" name="donor-name" required>
+            
+            <button type="submit" class="btn">Donate Now</button>
+        </form>
+
+        <p class="contact-note">If you prefer other donation methods, please <a href="contact.html" class="contact-link">contact us directly</a>.</p>
+
+    </section>
+
+    <script>
+        document.getElementById('donation-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent form from submitting to server
+
+            // Get the form values
+            const donationAmount = document.getElementById('donation-amount').value;
+            const donorName = document.getElementById('donor-name').value;
+
+            // Simple validation
+            if (donationAmount <= 0) {
+                alert('Please enter a valid donation amount.');
+                return;
+            }
+
+            if (!donorName) {
+                alert('Please enter your name.');
+                return;
+            }
+
+            // Display donation confirmation message
+            alert(`Thank you, ${donorName}! Your donation of $${donationAmount} has been received. We appreciate your support!`);
+            
+            // Reset the form
+            document.getElementById('donation-form').reset();
+        });
+    </script>
+</body>
+</html>

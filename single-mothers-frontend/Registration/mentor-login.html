@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SMEEF Mentor Login</title>
+</head>
+<body>
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('images/mentor-background.jpg') no-repeat center center/cover;
+}
+
+.wrapper {
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(250, 250, 250, 0.2);
+    backdrop-filter: blur(10px);
+    color: #333;
+    padding: 30px 40px;
+    border-radius: 15px; /* Match the rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for a soft effect */
+}
+
+.wrapper h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border-bottom: 2px solid rgba(0, 0, 0, .2); /* Subtle border */
+    color: #333;
+    font-size: 18px;
+    padding: 10px 20px; /* Adjusted padding for spacious layout */
+    border-radius: 5px; /* Rounded corners for the input */
+}
+
+.input-box input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+.wrapper .remember-forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 20px 0; /* Added margin for more space around the "Remember me" option */
+}
+
+.remember-forget label input {
+    accent-color: black;
+}
+
+.remember-forget a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+    color: rgb(6, 6, 255);
+}
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #333;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for the button */
+}
+
+.wrapper .btn:hover {
+    background: #555;
+}
+
+.wrapper .register-link {
+    text-align: center;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.register-link p a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+  </style>
+    <div class="wrapper">
+        <form action="">
+            <h1>Mentor Login</h1>
+            <div class="input-box">
+                <label for="email">Enter your full name</label>
+                <input type="text" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <label for="email">Enter your email</label>
+                <input type="text" placeholder="Email" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <label for="password">Enter your password</label>
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox" id="remember">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button class="btn" type="submit">Login</button>
+            <div class="register-link">
+               <p>New mentor? <a href="Registration/mentor-register.html">Sign up here</a></p>
+            </div>
+        </form>
+    </div>
+    
+<!-- First script for your mentor-login.js -->
+<script src="/dashboard/mentor-login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('mentor-registration-bg.jpg') no-repeat center center/cover;
+        }
+
+        .wrapper {
+            width: 400px;
+            background: transparent;
+            border: 2px solid rgba(250, 250, 250, 0.2);
+            backdrop-filter: blur(10px);
+            color: #333;
+            padding: 30px 40px;
+            border-radius: 15px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .wrapper h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .wrapper .input-box {
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .input-box input {
+            width: 100%;
+            border: none;
+            height: 100%;
+            background: transparent;
+            outline: none;
+            border-bottom: 2px solid rgba(0, 0, 0, .2);
+            color: #333;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .input-box input::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition :0.3s;
+        }
+
+        .wrapper .btn:hover {
+            background: #555;
+        }
+
+        .wrapper .login-link {
+            text-align: center;
+            margin: 20px;
+            font-size: 16px;
+        }
+
+        .login-link p a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="mentor-registration-submit.html" method="post">
+            <h1>Mentor Registration</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" name="full-name" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="password" required>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" name="confirm-password" required>
+            </div>
+            <button class="btn" type="submit">Register</button>
+            <div class="login-link">
+                <p>Already have an account? <a href="mentor-login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

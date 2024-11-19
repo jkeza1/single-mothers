@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Post - SMEEF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="feature.html">Features</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="training.html">Training</a></li>
+        <li><a href="mentorship.html">Mentorship</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Single Post Section -->
+  <section class="single-post">
+    <h2>Success Story: Jane's Journey</h2>
+    <p class="post-meta">Posted on <time datetime="2024-11-01">November 1, 2024</time> by SMEEF</p>
+    <div class="post-content">
+      <img src="jane-success-story.jpg" alt="Jane's Success Story" class="post-image">
+      <p>“SMEEF helped me gain skills that allowed me to start my own business and provide for my family. Before joining SMEEF, I struggled to make ends meet. The skills training I received enabled me to open a small craft store, and now I can support my children and plan for their future.”</p>
+      <p>Jane's story is just one of many inspiring journeys we see at SMEEF. Our programs are designed to uplift and empower single mothers in Rwanda, helping them become self-sufficient and successful entrepreneurs.</p>
+      <img src="craft-store.jpg" alt="Jane's Craft Store" class="related-image">
+      <p>Above: A glimpse of Jane's craft store, where she sells handmade products created during her training.</p>
+    </div>
+  </section>
+
+  <!-- Related Posts -->
+  <section class="related-posts">
+    <h2>Related Stories</h2>
+    <ul>
+      <li>
+        <a href="single-post-a.html">Success Story: Aisha's Business Growth</a>
+        <img src="aisha-success-story.jpg" alt="Aisha's Success" class="related-image">
+      </li>
+      <li>
+        <a href="single-post-b.html">Success Story: Esther's Journey to Independence</a>
+        <img src="esther-success-story.jpg" alt="Esther's Journey" class="related-image">
+      </li>
+      <li>
+        <a href="single-post-c.html">Success Story: Patricia's New Skills</a>
+        <img src="patricia-success-story.jpg" alt="Patricia's New Skills" class="related-image">
+      </li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="call-to-action">
+    <h2>Join Us</h2>
+    <p>Be a part of our mission to empower single mothers in Rwanda. <a href="volunteer.html" class="btn">Volunteer</a> or <a href="donate.html" class="btn">Donate</a> to make a difference!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 SMEEF - Single Mothers Economic Empowerment Framework</p>
+    <div class="social-icons">
+      <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
+      <a href="https://twitter.com/yourpage" target="_blank">Twitter</a>
+      <a href="https://instagram.com/yourpage" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth Scrolling for Internal Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Newsletter Subscription Form (Example)
+// You may want to expand this later for actual subscription functionality.
+document.querySelector('.newsletter-signup form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const email = this.querySelector('input[type="email"]').value;
+    
+    // Simple validation for email
+    if (validateEmail(email)) {
+        alert('Thank you for subscribing with: ' + email);
+        // Here you can add the functionality to send this data to your server
+        this.reset(); // Clear the form
+    } else {
+        alert('Please enter a valid email address.');
+    }
+});
+
+// Email validation function
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+  </script>
+</body>
+</html>
