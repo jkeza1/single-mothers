@@ -325,42 +325,37 @@ header {
     </div>
 </section>
         <script>
-           // Select elements from the DOM
-const messageForm = document.getElementById('messageForm');
-const thankYouMessage = document.getElementById('thankYouMessage');
-const chatLog = document.createElement('div'); // Added dynamically as it's not in the original HTML
-chatLog.setAttribute('id', 'chat-log'); // Give it the same ID as referenced
-document.body.appendChild(chatLog); // Append it to the body for demonstration
+         const messageForm = document.getElementById("messageForm");
+const thankYouMessage = document.getElementById("thankYouMessage");
 
-// Input element missing; adding a placeholder for 'messageInput'
-const messageInput = document.createElement('input');
-messageInput.setAttribute('id', 'messageInput');
-messageInput.setAttribute('placeholder', 'Write your message...');
-document.body.appendChild(messageInput); // Append it to the body for demonstration
+messageForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-// Handle form submission
-messageForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent page reload
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+    };
 
-    const userMessage = messageInput.value.trim(); // Retrieve input value
+    try {
+        const response = await fetch("http://localhost:5000/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
 
-    // Only proceed if the input is not empty
-    if (userMessage) {
-        // Add user's message to the chat log
-        chatLog.innerHTML += `<div class="user-message">${userMessage}</div>`;
-        messageInput.value = ''; // Clear the input field
-
-        // Simulate bot response
-        setTimeout(() => {
-            chatLog.innerHTML += `<div class="bot-message">Thank you for reaching out. How can I assist you today?</div>`;
-        }, 1000);
+        if (response.ok) {
+            messageForm.style.display = "none";
+            thankYouMessage.style.display = "block";
+        } else {
+            alert("Failed to send the message. Please try again later.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again later.");
     }
-
-    // Hide the form and show thank-you message
-    messageForm.style.display = 'none';
-    thankYouMessage.style.display = 'block';
 });
-
         </script>       
 </body>
 </html>

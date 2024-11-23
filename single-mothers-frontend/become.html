@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('mentor-registration-bg.jpg') no-repeat center center/cover;
+        }
+
+        .wrapper {
+            width: 400px;
+            background: transparent;
+            border: 2px solid rgba(250, 250, 250, 0.2);
+            backdrop-filter: blur(10px);
+            color: #333;
+            padding: 30px 40px;
+            border-radius: 15px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .wrapper h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .wrapper .input-box, .wrapper .file-box, .wrapper .textarea-box {
+            width: 100%;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .input-box input, .file-box input, .textarea-box textarea {
+            width: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+            color: #333;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .input-box input::placeholder, .textarea-box textarea::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .textarea-box textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #333;
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .wrapper .btn:hover {
+            background: #555;
+        }
+
+        .wrapper .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .login-link p a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="mentor-registration-submit.html" method="post" enctype="multipart/form-data">
+            <h1>Mentor Registration</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" name="full-name" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="file-box">
+                <label for="cv-upload">Upload CV:</label>
+                <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div class="file-box">
+                <label for="cover-upload">Upload Cover Letter:</label>
+                <input type="file" id="cover-upload" name="cover-letter" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div class="textarea-box">
+                <textarea name="explanation" placeholder="Why do you want to become a mentor?" required></textarea>
+            </div>
+            <button class="btn" type="submit">Submit Application</button>
+            <div class="login-link">
+                <p>Already registered? <a href="Registration/mentor-login.html">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
