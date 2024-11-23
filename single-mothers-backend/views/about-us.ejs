@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - SMEEF</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Welcome to SMEEF</h1>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="about-us-main">
+    <h2>About Us</h2>
+    <p><strong>Mission:</strong> <%= aboutUsData.mission %></p>
+    <p><strong>Vision:</strong> <%= aboutUsData.vision %></p>
+  </section>
+
+  <!-- Values Section -->
+  <section id="values">
+    <h2>Our Values</h2>
+    <div>
+      <% aboutUsData.values.forEach(function(value) { %>
+        <div class="value-item">
+          <h3><%= value.title %></h3>
+          <p><%= value.description %></p>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 SMEEF. All rights reserved.</p>
+  </footer>
+</body>
+</html>
