@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer with SMEEF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .volunteer-section {
+            flex: 1;
+            padding: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .volunteer-section h2 {
+            font-size: 1.5rem;
+            color: #ff851b;
+            margin-bottom: 15px;
+        }
+
+        .volunteer-section p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .volunteer-section form .form-group {
+            margin-bottom: 10px;
+        }
+
+        .volunteer-section label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .volunteer-section input,
+        .volunteer-section select,
+        .volunteer-section textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .volunteer-section textarea {
+            resize: vertical;
+        }
+
+        .volunteer-section button {
+            background-color: #ff851b;
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .volunteer-section button:hover {
+            background-color: #e67e22;
+        }
+
+        #thankYouMessage {
+            display: none;
+            padding: 15px;
+            background-color: #e7f9f0;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            text-align: center;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        #thankYouMessage h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .image-container img {
+           width: 200px; /* Increased width */
+           height: auto; /* Maintain aspect ratio */
+           border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Volunteer Form Section -->
+        <div class="volunteer-section">
+            <h2>Volunteer with SMEEF</h2>
+            <p>Support single mothers through training, mentorship, or job opportunities.</p>
+            <form id="volunteerForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <label for="interest">How would you like to help?</label>
+                    <select id="interest" name="interest">
+                        <option value="job-offers">Offer Jobs</option>
+                        <option value="training">Provide Training</option>
+                        <option value="mentorship">Be a Mentor</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us more about how you'd like to help"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="thankYouMessage">
+                <h3>Thank you for your interest in volunteering!</h3>
+                <p>We will get in touch with you soon.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="images/volunteer.jpg" alt="Volunteer Emphasis">
+    </div>
+
+    <script>
+        document.getElementById('volunteerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('volunteerForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

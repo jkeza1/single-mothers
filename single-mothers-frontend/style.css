@@ -972,21 +972,42 @@ nav ul li a:active {
 
 /* Footer Styles */
 footer {
-    background-color: #e67e22;
-    color: white;
+    background-color: #F4F4F4;
+    color:black;
     text-align: center;
     padding: 20px 0;
-    margin-top: 60px;
+    margin-top: 90px;
+
   }
 
-.social-icons {
-    margin-top: 10px;
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.social-icons a {
-    color: white;
+.social-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff851b;
+    border-radius: 50%;
+    color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: #e67e22;
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+    color: white;
 }
 
 /* Change background color when scrolling */
