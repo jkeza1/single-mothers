@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
     lastname: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    role: { type: String, enum: ['Admin', 'User', 'Mentor', 'SingleMother'], default: 'User' },
+    role: { type: String, enum: ['Admin', 'Mentor', 'SingleMother', 'User'], default: 'SingleMother' },
 });
 
 const LogInCollection = mongoose.model('User', UserSchema);
@@ -27,13 +27,10 @@ const LogInCollection = mongoose.model('User', UserSchema);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Paths
-const templatePath = path.join(__dirname, '../templates'); 
-const publicPath = path.join(__dirname, '../public');
+// Static Files Path
+const publicPath = path.join(__dirname, '../templates');
 
-// View Engine Setup
-app.set('view engine', 'hbs');
-app.set('views', templatePath); 
+// Serve Static Files
 app.use(express.static(publicPath));
 
 // Middleware to Check Role
@@ -50,46 +47,16 @@ const isRole = (role) => async (req, res, next) => {
 };
 
 // Routes
-app.get('/', (req, res) => res.render('index'));
-app.get('/login', (req, res) => res.render('login'));
-app.get('/register', (req, res) => res.render('register'));
-app.get('/forgot-password', (req, res) => res.render('forgot-password'));
-// Login Route
-app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-
-    try {
-        const user = await User.findOne({ email });
-
-        if (!user) {
-            return res.status(404).send("User not found");
-        }
-
-        if (user.password !== password) {
-            return res.status(401).send("Incorrect password");
-        }
-
-        // Redirect based on role
-        switch (user.role) {
-            case 'Admin':
-                return res.redirect('/admin-dashboard');
-            case 'Mentor':
-                return res.redirect('/mentor-dashboard');
-            case 'SingleMother':
-                return res.redirect('/single-mother-dashboard');
-            default:
-                return res.status(400).send("Invalid user role");
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Internal Server Error");
-    }
-});
+app.get('/', (req, res) => res.sendFile(path.join(publicPath, 'index.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(publicPath, 'login.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(publicPath, 'register.html')));
+app.get('/forgot-password', (req, res) => res.sendFile(path.join(publicPath, 'forgot-password.html')));
 
 // Dashboards
-app.get('/admin-dashboard', isRole('Admin'), (req, res) => res.render('admin-dashboard'));
-app.get('/mentor-dashboard', isRole('Mentor'), (req, res) => res.render('mentor-dashboard'));
-app.get('/single-mother-dashboard', isRole('SingleMother'), (req, res) => res.render('single-mother-dashboard'));
+
+app.get('/admin-dashboard', isRole('Admin'), (req, res) => res.sendFile(path.join(publicPath, 'admin-dashboard.html')));
+app.get('/mentor-dashboard', isRole('Mentor'), (req, res) => res.sendFile(path.join(publicPath, 'mentor-dashboard.html')));
+app.get('/single-mother-dashboard', isRole('SingleMother'), (req, res) => res.sendFile(path.join(publicPath, 'single-mother-dashboard.html')));
 
 // Registration Route
 app.post('/register', async (req, res) => {
@@ -98,42 +65,64 @@ app.post('/register', async (req, res) => {
         lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password,
-        role: req.body.role || 'User',
+        role: req.body.role || 'SingleMother', // Default to 'SingleMother' if no role is provided
     };
+
     try {
         const existingUser = await LogInCollection.findOne({ email: req.body.email });
-        if (existingUser) return res.send("User details already exist");
+        if (existingUser) {
+            console.log("User already exists. Redirecting to login.");
+            return res.status(302).redirect('./login.html'); // 302 status for redirection
+        }
         await LogInCollection.create(data);
-        res.status(201).render("login", { naming: req.body.firstname });
+        res.status(201).redirect('./login.html');
     } catch (error) {
-        console.error(error);
+        console.error("Error during registration:", error);
         res.status(500).send("Error occurred while processing registration");
     }
 });
-
 // Login Route
 app.post('/login', async (req, res) => {
-    if (!req.body.email || !req.body.password) {
-        return res.status(400).send("Please provide email and password");
-    }
+    const { email, password } = req.body;
+
     try {
-        const user = await LogInCollection.findOne({ email: req.body.email });
-        if (!user) return res.send("User not found");
-        if (user.password !== req.body.password) return res.send("Incorrect password");
+        console.log("Login attempt for email:", email); // Log the email being used
+
+        // Check if the user exists
+        const user = await LogInCollection.findOne({ email });
+        if (!user) {
+            console.log("User not found in the database."); // Log if no user is found
+            return res.status(404).send("User not found");
+        }
+
+        console.log("User found:", user); // Log the retrieved user details
+
+        // Check if the password matches
+        if (user.password !== password) {
+            console.log("Incorrect password for user:", email); // Log incorrect password
+            return res.status(401).send("Incorrect password");
+        }
+
+        console.log("Password matched for user:", email); // Log successful password match
 
         // Redirect to dashboard based on role
-        if (user.role === 'Admin') {
-            return res.status(201).render("admin-dashboard", { naming: `${user.firstname} ${user.lastname}` });
-        } else if (user.role === 'Mentor') {
-            return res.status(201).render("mentor-dashboard", { naming: `${user.firstname} ${user.lastname}` });
-        } else if (user.role === 'SingleMother') {
-            return res.status(201).render("single-mother-dashboard", { naming: `${user.firstname} ${user.lastname}` });
-        } else {
-            return res.status(201).render("index", { naming: `${user.firstname} ${user.lastname}` });
+        switch (user.role) {
+            case 'Admin':
+                console.log("Redirecting Admin to admin-dashboard");
+                return res.redirect('/admin-dashboard');
+            case 'Mentor':
+                console.log("Redirecting Mentor to mentor-dashboard");
+                return res.redirect('/mentor-dashboard');
+            case 'SingleMother':
+                console.log("Redirecting SingleMother to single-mother-dashboard");
+                return res.redirect('/single-mother-dashboard');
+            default:
+                console.log("Invalid role for user:", user.role); // Log invalid role
+                return res.status(400).send("Invalid user role");
         }
     } catch (error) {
-        console.error(error);
-        res.status(500).send("Error processing login");
+        console.error("Error during login:", error); // Log any unexpected error
+        res.status(500).send("Internal Server Error");
     }
 });
 
@@ -141,16 +130,16 @@ app.post('/login', async (req, res) => {
 app.post('/forgot-password', async (req, res) => {
     try {
         const user = await LogInCollection.findOne({ email: req.body.email });
-        if (!user) return res.send("No account associated with this email");
+        if (!user) return res.status(404).send("No account associated with this email");
         res.send("Password reset instructions sent to your email");
     } catch (error) {
-        console.error(error);
+        console.error("Error during password reset:", error);
         res.status(500).send("Error processing password reset");
     }
 });
 
 // Start Server
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
 
 // Export Modules
 module.exports = { app, LogInCollection };

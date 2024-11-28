@@ -14,7 +14,7 @@
 <body class="flex items-center justify-center h-screen bg-gray-100">
     <div class="w-full max-w-sm p-6 bg-white rounded-lg shadow-md">
         <h1 class="text-2xl font-bold text-gray-700 text-center mb-4">Welcome to Smeef</h1>
-        <form action="/login" method="POST" id="login-form" class="space-y-6">
+        <form action="./login.html" method="POST" id="login-form" class="space-y-6">
             <div>
                 <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                 <input 
@@ -46,8 +46,45 @@
         </form>
         <p class="text-center text-sm text-gray-600 mt-2">
             Don't have an account? 
-            <a href="/register" class="text-green-500 hover:underline">Register</a>
+            <a href="./register.html" class="text-green-500 hover:underline">Register</a>
         </p>
     </div>
+    <script>
+        // Handle form submission
+        document.getElementById("login-form").addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                // Send login request to the API
+                const response = await fetch("/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    // Handle successful login
+                    const data = await response.json();
+                    const redirectUrl = data.redirectUrl || "/"; // Redirect URL from the API
+
+                    // Redirect to the appropriate dashboard
+                    window.location.href = redirectUrl;
+                } else {
+                    // Handle login failure
+                    const error = await response.text();
+                    alert(`Login failed: ${error}`);
+                }
+            } catch (error) {
+                console.error("Error during login:", error);
+                alert("An error occurred during login. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>

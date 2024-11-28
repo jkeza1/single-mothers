@@ -48,6 +48,14 @@
                     class="mt-1 p-2 w-full border rounded-md text-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 />
             </div>
+             <div>
+                <label for="role" class="block text-sm text-gray-700">Role</label>
+                <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option value="Mentor">Mentor</option>
+                    <option value="SingleMother">Single Mother</option>
+                </select>
+            </div>
             <div>
                 <label for="password" class="block text-sm text-gray-700">Password</label>
                 <input 
@@ -59,29 +67,15 @@
                     class="mt-1 p-2 w-full border rounded-md text-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
                 />
             </div>
-            <div>
-                <label for="role" class="block text-sm text-gray-700">Register As</label>
-                <select 
-                    id="role" 
-                    required
-                    class="mt-1 p-2 w-full border rounded-md text-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
-                >
-                    <option value="" disabled selected>Select your role</option>
-                    <option value="admin">Admin</option>
-                    <option value="mentor">Mentor</option>
-                    <option value="singleMother">Single Mother</option>
-                </select>
-            </div>
             <button 
-                type="submit"
-                class="w-full bg-green-500 text-white py-2 rounded text-sm hover:bg-green-600 transition"
-            >
-                Register
-            </button>
-        </form>
+            type="submit"
+            class="w-full bg-green-500 text-white py-2 rounded text-sm hover:bg-green-600 transition"
+        >
+            Register
+        </button>
         <p class="text-center text-sm text-gray-600 mt-2">
             Already have an account? 
-            <a href="/login" class="text-green-500 hover:underline">Login</a>
+            <a href="./login.html" class="text-green-500 hover:underline">Login</a>
         </p>
     </div>
 </body>
