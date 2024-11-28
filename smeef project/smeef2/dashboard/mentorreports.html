@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Sidebar Navigation */
+        .nav-links {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .nav-links a {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #f8f9fb;
+            color: black;
+        }
+
+        /* Reports & Analytics Section */
+        .reports-analytics {
+            max-width: 1200px;
+            margin-left: 300px; /* Add space for sidebar */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .reports-analytics h2 {
+            font-size: 2rem;
+            color: #e57300;
+            margin-bottom: 20px;
+        }
+
+        /* Reports Grid */
+        .reports-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 20px;
+        }
+
+        /* Report Card */
+        .report-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .report-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .report-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .report-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .report-card ul li {
+            margin: 8px 0;
+            color: #555;
+        }
+
+        .report-card ul li strong {
+            color: #e57300;
+        }
+
+        /* Button Style */
+        .report-card button {
+            background-color: #e57300;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .report-card button:hover {
+            background-color: #bf5700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="nav-links">
+        <h2>Menu</h2>
+        <a href="mentorcourse.html">My Courses</a>
+        <a href="mentormentee.html">Mentees</a>
+        <a href="mentorassignment.html">Assignments</a>
+        <a href="mentorsettings.html">Settings</a>
+        <a href="mentorsupport.html">Support & FAQs</a>
+        <a href="mentorreports.html">Reports & Analysis</a>
+        <a href="mentorlogout.html">Logout</a>
+    </div>
+
+    <!-- Reports & Analytics Section -->
+    <section class="reports-analytics">
+        <h2>Reports & Analytics</h2>
+        <div class="reports-grid">
+            <!-- Course Performance Report -->
+            <div class="report-card">
+                <h3>Course Performance</h3>
+                <p>Detailed performance insights for your courses, including:</p>
+                <ul>
+                    <li><strong>Mentee Feedback:</strong> Analyze ratings and comments to understand the strengths and weaknesses of your course delivery.</li>
+                    <li><strong>Grades:</strong> Track mentees' performance on assessments, quizzes, and final exams. See overall pass rates and identify areas for improvement.</li>
+                    <li><strong>Progress Tracking:</strong> Monitor mentees' completion rates for individual lessons and milestones. Get a clear picture of how students are progressing.</li>
+                    <li><strong>Interactive Charts:</strong> Visualize performance trends and spot patterns using dynamic, interactive graphs.</li>
+                </ul>
+                <button>View Full Report</button>
+            </div>
+
+            <!-- Mentee Progress Report -->
+            <div class="report-card">
+                <h3>Mentee Progress</h3>
+                <p>View detailed reports on your mentees’ learning outcomes:</p>
+                <ul>
+                    <li><strong>Learning Goals:</strong> Review achieved vs. pending goals for each mentee. Track whether they are on pace with their targets.</li>
+                    <li><strong>Course Completion:</strong> See individual mentee progress for each course, including how many modules they've completed.</li>
+                    <li><strong>Engagement Levels:</strong> Check mentee participation stats, such as how many courses they interact with, the time spent, and their engagement in discussions.</li>
+                    <li><strong>Performance Trends:</strong> Identify any mentee struggling with specific topics or excelling in particular areas through detailed trend analysis.</li>
+                </ul>
+                <button>View Full Report</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

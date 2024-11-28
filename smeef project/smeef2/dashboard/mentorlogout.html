@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Example</title>
+    <style>
+        /* Simple modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+        
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            float: right;
+            padding: 0 10px;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .logout-btn {
+            background-color: #e57300;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background-color: #bf5700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logout Button -->
+    <a href="#" class="logout-btn" onclick="showLogoutModal()">Logout</a>
+
+    <!-- Modal for Logout Confirmation -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogoutModal()">&times;</span>
+            <h2>Are you sure you want to log out?</h2>
+            <button onclick="logout()">Yes, Logout</button>
+            <button onclick="closeLogoutModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        // Show the modal when logout button is clicked
+        function showLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'block';
+        }
+
+        // Close the modal when cancel is clicked
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        // Clear session data and redirect to login page
+        function logout() {
+            // Clear session or local storage
+            sessionStorage.clear(); // Clear sessionStorage
+            localStorage.clear();  // Clear localStorage
+
+            // Optionally show confirmation (you can use a toast or alert)
+            alert('You have been logged out successfully.');
+
+            // Redirect to login page (or any other page you wish)
+            window.location.href = 'login.html';  // Change this to your login page URL
+        }
+
+        // Close the modal if the user clicks outside the modal content
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('logoutModal')) {
+                closeLogoutModal();
+            }
+        };
+    </script>
+
+</body>
+</html>
